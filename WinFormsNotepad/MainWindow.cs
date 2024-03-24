@@ -12,6 +12,7 @@ namespace WinFormsNotepad
             UpdateTitle();
             UpdateZoom();
             UpdateStatusBar();
+            FormClosing += MainWindow_FormClosing;
         }
 
 
@@ -47,6 +48,18 @@ namespace WinFormsNotepad
             sw.Write(textArea.Text);
             _modified = false;
             UpdateTitle();
+        }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_modified)
+            {
+                DialogResult result = MessageBox.Show("Do you want to save changes to the current file?", "Notepad", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                    saveToolStripMenuItem_Click(sender, e);
+                else if (result == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -268,5 +281,9 @@ namespace WinFormsNotepad
             }
         }
 
+        private void newWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+        }
     }
 }

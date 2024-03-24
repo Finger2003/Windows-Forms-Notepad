@@ -156,6 +156,7 @@
             newWindowToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.N;
             newWindowToolStripMenuItem.Size = new Size(220, 22);
             newWindowToolStripMenuItem.Text = "New &Window";
+            newWindowToolStripMenuItem.Click += newWindowToolStripMenuItem_Click;
             // 
             // openToolStripMenuItem
             // 
