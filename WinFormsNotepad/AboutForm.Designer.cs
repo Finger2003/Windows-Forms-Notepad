@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
-            descLabel = new Label();
             descPictureBox = new PictureBox();
+            descLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -52,19 +52,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(descLabel);
-            splitContainer1.Size = new Size(280, 317);
-            splitContainer1.SplitterDistance = 208;
+            splitContainer1.Size = new Size(277, 317);
+            splitContainer1.SplitterDistance = 274;
             splitContainer1.TabIndex = 0;
-            // 
-            // descLabel
-            // 
-            descLabel.Dock = DockStyle.Fill;
-            descLabel.Location = new Point(0, 0);
-            descLabel.Name = "descLabel";
-            descLabel.Size = new Size(280, 105);
-            descLabel.TabIndex = 0;
-            descLabel.Text = "My first Windows Forms app!";
-            descLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // descPictureBox
             // 
@@ -72,10 +62,20 @@
             descPictureBox.Image = Properties.Resources.about_image;
             descPictureBox.Location = new Point(0, 0);
             descPictureBox.Name = "descPictureBox";
-            descPictureBox.Size = new Size(280, 208);
+            descPictureBox.Size = new Size(277, 274);
             descPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             descPictureBox.TabIndex = 0;
             descPictureBox.TabStop = false;
+            // 
+            // descLabel
+            // 
+            descLabel.Dock = DockStyle.Fill;
+            descLabel.Location = new Point(0, 0);
+            descLabel.Name = "descLabel";
+            descLabel.Size = new Size(277, 39);
+            descLabel.TabIndex = 0;
+            descLabel.Text = "My first Windows Forms app!";
+            descLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AboutForm
             // 
@@ -85,6 +85,7 @@
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AboutForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "About";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
