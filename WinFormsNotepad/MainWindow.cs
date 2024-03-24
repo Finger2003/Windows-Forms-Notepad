@@ -285,5 +285,10 @@ namespace WinFormsNotepad
         {
             System.Diagnostics.Process.Start(Application.ExecutablePath);
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

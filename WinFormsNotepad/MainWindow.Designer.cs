@@ -211,6 +211,7 @@
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(220, 22);
             exitToolStripMenuItem.Text = "E&xit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
@@ -446,6 +447,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = mainMenu;
             Name = "MainWindow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Notepad";
             statusBar.ResumeLayout(false);
             statusBar.PerformLayout();
