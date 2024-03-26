@@ -15,12 +15,12 @@ This repository contains a simple Windows Forms application inspired by the Wind
 - Zoom.
 - Show status bar.
 - About.
-
+- Go to.
+- 
 ## Not implemented features:
 - Page setup and print.
 - Find, find next, find previous.
 - Replace.
-- Go to.
 
 ## Installation
 1. Clone this repository to your local machine.
