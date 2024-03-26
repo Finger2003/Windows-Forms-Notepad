@@ -311,11 +311,11 @@
             // 
             // goToToolStripMenuItem
             // 
-            goToToolStripMenuItem.Enabled = false;
             goToToolStripMenuItem.Name = "goToToolStripMenuItem";
             goToToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.G;
             goToToolStripMenuItem.Size = new Size(196, 22);
             goToToolStripMenuItem.Text = "&Go To...";
+            goToToolStripMenuItem.Click += goToToolStripMenuItem_Click;
             // 
             // toolStripSeparator5
             // 
@@ -348,14 +348,14 @@
             // wordWrapToolStripMenuItem
             // 
             wordWrapToolStripMenuItem.Name = "wordWrapToolStripMenuItem";
-            wordWrapToolStripMenuItem.Size = new Size(132, 22);
+            wordWrapToolStripMenuItem.Size = new Size(180, 22);
             wordWrapToolStripMenuItem.Text = "&Word wrap";
             wordWrapToolStripMenuItem.Click += wordWrapToolStripMenuItem_Click;
             // 
             // fontToolStripMenuItem
             // 
             fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            fontToolStripMenuItem.Size = new Size(132, 22);
+            fontToolStripMenuItem.Size = new Size(180, 22);
             fontToolStripMenuItem.Text = "&Font...";
             fontToolStripMenuItem.Click += fontToolStripMenuItem_Click;
             // 
@@ -449,6 +449,7 @@
             Name = "MainWindow";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Notepad";
+            FormClosing += MainWindow_FormClosing;
             statusBar.ResumeLayout(false);
             statusBar.PerformLayout();
             mainMenu.ResumeLayout(false);

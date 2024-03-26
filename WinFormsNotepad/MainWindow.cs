@@ -6,16 +6,20 @@ namespace WinFormsNotepad
         private bool _modified = false;
         private bool _redo = false;
         private int _zoom = 100;
+        public int Lines { get { return textArea.Lines.Length; } }
         public MainWindow()
         {
             InitializeComponent();
             UpdateTitle();
             UpdateZoom();
             UpdateStatusBar();
-            FormClosing += MainWindow_FormClosing;
         }
 
-
+        public void GoToLine(int line)
+        {
+            int index = textArea.GetFirstCharIndexFromLine(line);
+            textArea.Select(index, 0);
+        }
         private void UpdateZoom()
         {
             textArea.ZoomFactor = _zoom / 100f;
@@ -50,7 +54,7 @@ namespace WinFormsNotepad
             UpdateTitle();
         }
 
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainWindow_FormClosing(object? sender, FormClosingEventArgs e)
         {
             if (_modified)
             {
@@ -135,6 +139,7 @@ namespace WinFormsNotepad
 
         private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            goToToolStripMenuItem.Enabled = wordWrapToolStripMenuItem.Checked;
             wordWrapToolStripMenuItem.Checked = !wordWrapToolStripMenuItem.Checked;
             textArea.WordWrap = wordWrapToolStripMenuItem.Checked;
         }
@@ -289,6 +294,11 @@ namespace WinFormsNotepad
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void goToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new GoToLineForm(this).ShowDialog();
         }
     }
 }
